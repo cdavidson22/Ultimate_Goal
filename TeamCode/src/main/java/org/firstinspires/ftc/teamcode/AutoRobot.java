@@ -43,7 +43,7 @@ public class AutoRobot extends LinearOpMode {
             telemetry.update();
         }
 
-        //step 3: drive backwards for 1 second
+        //step 3.0: drive backwards for 1 second
         robot.leftDrive.setPower(-0.6);
         robot.rightDrive.setPower(0.6);
 
