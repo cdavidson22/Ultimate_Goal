@@ -54,5 +54,44 @@ public class AutoRobot extends LinearOpMode {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
             telemetry.update();
         }
+
+        //turn for 3rd leg
+        robot.leftDrive.setPower(TURN_SPEED);
+        robot.rightDrive.setPower(-TURN_SPEED);
+        runtime.reset();
+
+        while(opModeIsActive() && runtime.seconds() < 1.3) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        //3rd leg
+        robot.leftDrive.setPower(FORWARD_SPEED);
+        robot.rightDrive.setPower(FORWARD_SPEED);
+        runtime.reset();
+
+        while(opModeIsActive() && runtime.seconds() < 3.0) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+        //turn for 4th leg
+        robot.leftDrive.setPower(-TURN_SPEED);
+        robot.rightDrive.setPower(TURN_SPEED);
+        runtime.reset();
+
+        while(opModeIsActive() && runtime.seconds() < 1.3) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
+
+        //4th leg
+        robot.leftDrive.setPower(FORWARD_SPEED);
+        robot.rightDrive.setPower(FORWARD_SPEED);
+        runtime.reset();
+
+        while(opModeIsActive() && runtime.seconds() < 3.0) {
+            telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
+            telemetry.update();
+        }
     }
 }
