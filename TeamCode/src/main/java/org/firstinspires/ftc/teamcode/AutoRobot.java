@@ -11,6 +11,9 @@ public class AutoRobot extends LinearOpMode {
     // OpMode properties
     TeamRobot robot = new TeamRobot();
     ElapsedTime runtime = new ElapsedTime();
+    final double FORWARD_SPEED = 0.6;
+    final double TURN_SPEED = 0.4;
+
     @Override
     public void runOpMode() throws InterruptedException {
         // Initialize robot
@@ -24,8 +27,8 @@ public class AutoRobot extends LinearOpMode {
         waitForStart();
 
         // Step 1: forward for 3 seconds
-        robot.leftDrive.setPower(0.6);
-        robot.rightDrive.setPower(-0.6);
+        robot.leftDrive.setPower(FORWARD_SPEED);
+        robot.rightDrive.setPower(FORWARD_SPEED);
         runtime.reset();
 
         while(opModeIsActive() && runtime.seconds() < 3.0) {
@@ -34,8 +37,8 @@ public class AutoRobot extends LinearOpMode {
         }
 
         // Step 2: spin for 1.3 seconds
-        robot.leftDrive.setPower(0.6);
-        robot.rightDrive.setPower(0.6);
+        robot.leftDrive.setPower(TURN_SPEED);
+        robot.rightDrive.setPower(-TURN_SPEED);
         runtime.reset();
 
         while(opModeIsActive() && runtime.seconds() < 1.3) {
@@ -44,8 +47,8 @@ public class AutoRobot extends LinearOpMode {
         }
 
         //step 3.0: drive backwards for 1 second
-        robot.leftDrive.setPower(-0.6);
-        robot.rightDrive.setPower(0.6);
+        robot.leftDrive.setPower(-FORWARD_SPEED);
+        robot.rightDrive.setPower(-FORWARD_SPEED);
 
         while(opModeIsActive() && runtime.seconds() < 1) {
             telemetry.addData("Path", "Leg 1: %2.5f S Elapsed", runtime.seconds());
