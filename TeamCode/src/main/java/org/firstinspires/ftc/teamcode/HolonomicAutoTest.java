@@ -63,7 +63,31 @@ public class HolonomicAutoTest extends LinearOpMode{
         F2.setPower(.25);
         R1.setPower(.25);
         R2.setPower(.25);
-        sleep(1750);// moves forward off balence board
+        sleep(1750);// moves forward for 1.75 seconds
+
+        F1.setPower(0);
+        F2.setPower(0);//stops
+        R1.setPower(0);
+        R2.setPower(0);
+        sleep(500);
+
+        F1.setPower(.25);
+        F2.setPower(-.25);
+        R1.setPower(.25);
+        R2.setPower(-.25);
+        sleep(100);
+
+        F1.setPower(0);
+        F2.setPower(0);//stops
+        R1.setPower(0);
+        R2.setPower(0);
+        sleep(500);
+
+        F1.setPower((-.25));
+        F2.setPower((-.25));
+        R1.setPower((-.25));
+        R2.setPower((-.25));
+        sleep(1750);
 
         F1.setPower(0);
         F2.setPower(0);//stops
