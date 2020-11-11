@@ -47,7 +47,7 @@ public class EditedHolonomic extends OpMode
         F1.setDirection(DcMotorSimple.Direction.REVERSE);
         F2.setDirection(DcMotorSimple.Direction.REVERSE);
         R1.setDirection(DcMotorSimple.Direction.FORWARD);
-        R2.setDirection(DcMotorSimple.Direction.FORWARD);
+        R2.setDirection(DcMotorSimple.Direction.REVERSE);
         //Winch.setDirection(DcMotorSimple.Direction.FORWARD);
 
         F1.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
