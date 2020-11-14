@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 @Autonomous(name="AutoRobot: Autonomous drive", group="Team Robot")
-//@Disabled
+@Disabled
 public class AutoRobot extends LinearOpMode {
     // OpMode properties
     TeamRobot robot = new TeamRobot();

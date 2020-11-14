@@ -14,6 +14,7 @@ This OpMode runs motors in the following configuration:
 
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -22,7 +23,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
 @TeleOp(name="holonomic motors", group="teleop")
-//@Disabled
+@Disabled
 
 public class RomeroHolonomicMotorsOnly extends OpMode
 {

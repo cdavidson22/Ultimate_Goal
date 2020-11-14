@@ -35,9 +35,58 @@ public class HolonomicAutoTest extends LinearOpMode{
 
     double Pi = Math.PI/4;
 
+    public void forwardDrive(int length) {
+        F1.setPower(.25);
+        F2.setPower(.25);
+        R1.setPower(.25);
+        R2.setPower(.25);
+        telemetry.addData("Status","Forward Drive");
+        telemetry.update();
+        sleep(length);
+    }
+    public void backwardsDrive(int length){
+        F1.setPower(-.25);
+        F2.setPower(-.25);
+        R1.setPower(-.25);
+        R2.setPower(-.25);
+        telemetry.addData("Status","Backwards Drive");
+        telemetry.update();
+        sleep(length);
+    }
+    public void strafeLeft(int length){
+        F1.setPower(-.25);
+        F2.setPower(.25);
+        R1.setPower(.25);
+        R2.setPower(-.25);
+        telemetry.addData("Status","strafing left");
+        telemetry.update();
+        sleep(length);
+    }
+    public void strafeRight(int length){
+        F1.setPower(.25);
+        F2.setPower(-.25);
+        R1.setPower(-.25);
+        R2.setPower(.25);
+        telemetry.addData("Status","Strafing right");
+        telemetry.update();
+        sleep(length);
+    }
+
+    public void robotStop(int length){
+        F1.setPower(0);
+        F2.setPower(0);
+        R1.setPower(0);
+        R2.setPower(0);
+        telemetry.addData("Status","Robot at standstill");
+        telemetry.update();
+        sleep(length);
+    }
+
+
     @Override
     public void runOpMode() throws InterruptedException {
         telemetry.addData("Status", "Initialized");
+        telemetry.update();
 
         F1 = hardwareMap.get(DcMotor.class, "F1");
         F2 = hardwareMap.get(DcMotor.class, "F2");
@@ -56,42 +105,52 @@ public class HolonomicAutoTest extends LinearOpMode{
 
         waitForStart();
         telemetry.addData("version","1.0");
+        telemetry.update();
 
         sleep(1000);
 
-        F1.setPower(.25);
-        F2.setPower(.25);
-        R1.setPower(.25);
-        R2.setPower(.25);
-        sleep(1750);// moves forward for 1.75 seconds
+        forwardDrive(1000);
+        robotStop(2000);
+        backwardsDrive(1000);
+        robotStop(2000);
+        strafeLeft(1000);
+        robotStop(2000);
+        strafeRight(1000);
+        robotStop(2000);
 
-        F1.setPower(0);
-        F2.setPower(0);//stops
-        R1.setPower(0);
-        R2.setPower(0);
-        sleep(500);
-
-        F1.setPower(.25);
-        F2.setPower(-.25);
-        R1.setPower(.25);
-        R2.setPower(-.25);
-        sleep(100);
-
-        F1.setPower(0);
-        F2.setPower(0);//stops
-        R1.setPower(0);
-        R2.setPower(0);
-        sleep(500);
-
-        F1.setPower((-.25));
-        F2.setPower((-.25));
-        R1.setPower((-.25));
-        R2.setPower((-.25));
-        sleep(1750);
-
-        F1.setPower(0);
-        F2.setPower(0);//stops
-        R1.setPower(0);
-        R2.setPower(0);
+//        F1.setPower(.25);
+//        F2.setPower(.25);
+//        R1.setPower(.25);
+//        R2.setPower(.25);
+//        sleep(1750);// moves forward for 1.75 seconds
+//
+//        F1.setPower(0);
+//        F2.setPower(0);//stops
+//        R1.setPower(0);
+//        R2.setPower(0);
+//        sleep(500);
+//
+//        F1.setPower(.25);
+//        F2.setPower(-.25);
+//        R1.setPower(.25);
+//        R2.setPower(-.25);
+//        sleep(100);
+//
+//        F1.setPower(0);
+//        F2.setPower(0);//stops
+//        R1.setPower(0);
+//        R2.setPower(0);
+//        sleep(500);
+//
+//        F1.setPower((-.25));
+//        F2.setPower((-.25));
+//        R1.setPower((-.25));
+//        R2.setPower((-.25));
+//        sleep(1750);
+//
+//        F1.setPower(0);
+//        F2.setPower(0);//stops
+//        R1.setPower(0);
+//        R2.setPower(0);
     }
 }
