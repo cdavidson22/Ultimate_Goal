@@ -117,11 +117,6 @@ public class HolonomicAutoTestCourse extends LinearOpMode{
 
         forwardDrive(1000);
         robotStop(2000);
-        backwardsDrive(1000);
-        robotStop(2000);
-        strafeLeft(1000);
-        robotStop(2000);
-        strafeRight(1000);
-        robotStop(2000);
+
     }
 }

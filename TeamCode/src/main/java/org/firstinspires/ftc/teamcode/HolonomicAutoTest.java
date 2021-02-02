@@ -83,6 +83,28 @@ public class HolonomicAutoTest extends LinearOpMode{
     }
 
 
+    public void turnRight(int length){
+        F1.setPower(0.25);
+        F2.setPower(-0.25);
+        R1.setPower(0.25);
+        R2.setPower(-0.25);
+        telemetry.addData("Status","turning riht");
+        telemetry.update();
+        sleep(length);
+    }
+
+    public void turnLeft(int length){
+        F1.setPower(-0.25);
+        F2.setPower(0.25);
+        R1.setPower(-0.25);
+        F2.setPower(0.25);
+        telemetry.addData("Status","Turning left");
+        telemetry.update();
+        sleep(length);
+    }
+
+
+
 
     @Override
     public void runOpMode() throws InterruptedException {
