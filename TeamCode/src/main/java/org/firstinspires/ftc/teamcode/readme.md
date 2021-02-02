@@ -2,6 +2,22 @@
 ##Test Autonomous file = HolonomicAutoTest.java
 
 
+#drive system labels
+/* Created by Team 5115 at Windsor High School for the 2017-18 Season
+This OpMode runs motors in the following configuration:
+
+       ////            \\\\
+      /F1/ ------------ \F2\
+     //// |            | \\\\
+          |            |
+          |            |
+     \\\\ |            | ////
+      \R1\ ------------ /R2/
+       \\\\            ////
+
+ */
+
+
 
 
 ## TeamCode Module

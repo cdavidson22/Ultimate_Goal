@@ -1,28 +1,13 @@
 package org.firstinspires.ftc.teamcode;
+
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.ColorSensor;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
-import com.qualcomm.ftccommon.ClassManagerFactory;
-import com.qualcomm.robotcore.hardware.CRServo;
-import java.math.*;
-import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
-import com.qualcomm.robotcore.hardware.DigitalChannel;
-import android.app.Activity;
-import android.graphics.Color;
-import android.view.View;
-
-@Autonomous(name="Honolomic Autonomous Test", group="autonomous")
+@Autonomous(name="Honolomic Autonomous Test Course", group="autonomous")
 //@Disabled
-public class HolonomicAutoTest extends LinearOpMode{
+public class HolonomicAutoTestCourse extends LinearOpMode{
     private DcMotor F1 = null;
     private DcMotor F2 = null;
     private DcMotor R1 = null;
@@ -80,6 +65,21 @@ public class HolonomicAutoTest extends LinearOpMode{
         telemetry.addData("Status","Robot at standstill");
         telemetry.update();
         sleep(length);
+    }
+
+    public void turnRight(int length){
+        F1.setPower(0.25);
+        F2.setPower(-0.25);
+        R1.setPower(0.25);
+        R2.setPower(-0.25);
+        sleep(length);
+    }
+
+    public void turnLeft(int length){
+        F1.setPower(-0.25);
+        F2.setPower(0.25);
+        R1.setPower(-0.25);
+        F2.setPower(0.25);
     }
 
 
