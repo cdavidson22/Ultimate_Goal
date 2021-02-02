@@ -80,6 +80,7 @@ public class HolonomicAutoTestCourse extends LinearOpMode{
         F2.setPower(0.25);
         R1.setPower(-0.25);
         F2.setPower(0.25);
+        sleep(length);
     }
 
 
