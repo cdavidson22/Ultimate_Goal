@@ -72,6 +72,8 @@ public class HolonomicAutoTestCourse extends LinearOpMode{
         F2.setPower(-0.25);
         R1.setPower(0.25);
         R2.setPower(-0.25);
+        telemetry.addData("Status","turning riht");
+        telemetry.update();
         sleep(length);
     }
 
@@ -80,6 +82,8 @@ public class HolonomicAutoTestCourse extends LinearOpMode{
         F2.setPower(0.25);
         R1.setPower(-0.25);
         F2.setPower(0.25);
+        telemetry.addData("Status","Turning left");
+        telemetry.update();
         sleep(length);
     }
 
